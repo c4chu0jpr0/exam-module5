@@ -1,0 +1,25 @@
+<h1>Trang chủ</h1>
+<button type="button" (click)="goToAdd()" class="btn btn-primary">Thêm mới book</button>
+<div>có {{book.length}} cuốn sách </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên sách</th>
+            <th scope="col">Tác giả</th>
+            <th scope="col">Hoạt động</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let cus of book">
+            <td>{{cus.id}}</td>
+            <td>{{cus.title}}</td>
+            <td>{{cus.author}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="updateCustomer(cus.id)">Update</button>
+                <button class="btn btn-primary" (click)="detailCustomer(cus.id)">Detail</button>
+                <button class="btn btn-danger" (click)="deleteCustomer(cus.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
